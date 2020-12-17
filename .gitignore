@@ -1,0 +1,6 @@
+.idea/
+out/
+README.md/
+LICENSE.txt/
+lib/
+*.iml
