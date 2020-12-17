@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="400.0" prefWidth="643.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.virtusa.exception.controller.SearchOrderPageController">
+    <children>
+        <Label layoutX="236.0" layoutY="14.0" prefHeight="35.0" prefWidth="193.0" text="Search Orders" textFill="#5c4c4b">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+        </Label>
+        <Button layoutX="22.0" layoutY="22.0" mnemonicParsing="false" onAction="#btnSearchNavigate_onAction" prefHeight="31.0" prefWidth="57.0" text="Back" />
+        <TextField fx:id="txtSearch" layoutX="17.0" layoutY="66.0" prefHeight="31.0" prefWidth="603.0" promptText="Search here: OrderID,Order Date,Customer ID,Customer Name,etc; " />
+        <TableView fx:id="tblSearchOrder" layoutX="17.0" layoutY="114.0" onMouseClicked="#tblOrders_OnMouseClicked" prefHeight="258.0" prefWidth="609.0">
+            <columns>
+                <TableColumn prefWidth="75.0" text="Order ID" />
+                <TableColumn prefWidth="103.8000259399414" text="Order Date" />
+                <TableColumn prefWidth="153.0" text="Customer ID" />
+                <TableColumn prefWidth="165.0" text="Customer Name" />
+                <TableColumn prefWidth="107.0" text="Total" />
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>
