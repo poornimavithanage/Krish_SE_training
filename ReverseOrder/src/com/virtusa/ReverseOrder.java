@@ -4,18 +4,18 @@ import java.math.BigInteger;
 import java.util.Scanner;
 
 public class ReverseOrder {
- public static void reverse(BigInteger number){
+ public static void reverseOrder(BigInteger number){
 
       BigInteger reverseNumber = new BigInteger(String.valueOf(number));
-      BigInteger calculationNumber = new BigInteger("10");
+      BigInteger mathNumber = new BigInteger("10");
 
-      if(reverseNumber.compareTo(calculationNumber)==-1){
+      if(reverseNumber.compareTo(mathNumber)==-1){
           System.out.println(reverseNumber);
           return;
       }else {
-          System.out.print(reverseNumber.mod(calculationNumber));
-          reverseNumber = reverseNumber.divide(calculationNumber);
-          reverse(reverseNumber);
+          System.out.print(reverseNumber.mod(mathNumber));
+          reverseNumber = reverseNumber.divide(mathNumber);
+          reverseOrder(reverseNumber);
       }
   }
 
@@ -25,7 +25,7 @@ public class ReverseOrder {
 
         BigInteger number = scanner.nextBigInteger();
         System.out.println("The reversed Number is " );
-        reverse(number);
+        reverseOrder(number);
 
     }
 }
