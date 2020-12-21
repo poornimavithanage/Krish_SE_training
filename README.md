@@ -1,6 +1,7 @@
 ## Capitalize Scenario
-## Reverse Ordering
 ## Exception Handling
+## Reverse Ordering
+## Singleton Design Pattern
 
 
 
