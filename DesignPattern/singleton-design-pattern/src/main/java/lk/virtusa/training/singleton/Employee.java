@@ -27,7 +27,7 @@ public class Employee {
 
     public Connection getConnection() throws ClassNotFoundException {
         Connection con=null;
-        
+
         try {
             con= DriverManager.getConnection("jdbc:mysql://localhost:3306/singletonDB", "root", "mysql");
         } catch (SQLException e) {
