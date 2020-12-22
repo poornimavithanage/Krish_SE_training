@@ -4,6 +4,7 @@
 ### Design Patterns
     > Singleton Design Pattern
     > Factory Design Pattern
+    > Prototype Design Pattern
 
 
 

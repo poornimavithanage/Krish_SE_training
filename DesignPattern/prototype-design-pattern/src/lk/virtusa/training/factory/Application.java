@@ -17,7 +17,7 @@ public class Application {
         System.out.println(pizza1);
 
         System.out.println("===================================");
-        
+
         Pasta pasta = (Pasta) placeOrder.getItem(ItemType.PASTA);
         System.out.println(pasta);
 
