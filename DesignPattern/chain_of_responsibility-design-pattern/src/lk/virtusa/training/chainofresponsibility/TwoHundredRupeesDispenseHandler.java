@@ -15,7 +15,7 @@ public class TwoHundredRupeesDispenseHandler implements DispenseHandlerChain{
         if (currency.getAmount() >=200){
             int number = currency.getAmount() / 200;
             int remainder = currency.getAmount()%200;
-            System.out.println("Dispensing Handler " +number+ "Rs.200");
+            System.out.println("Dispensing Handler " +number+ " Rs.200");
             if(remainder!=0)
                 this.chain.dispense(new Currency(remainder));
         }else{
