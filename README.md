@@ -5,6 +5,8 @@
     > Singleton Design Pattern
     > Factory Design Pattern
     > Prototype Design Pattern
+    > Chain of Responsibility Design Pattern
+        > ATM Dispenser
 
 
 
