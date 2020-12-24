@@ -8,8 +8,8 @@ public class AppInitializer {
         ItemTelescopic2 telescopic2 = new ItemTelescopic2("I0023");
         System.out.println(telescopic2);
 
-        Item.Builder builder = new Item.Builder("I0025");
-        Item item = builder.description("Pizza").size("Medium").build();
+        Item.Builder builder = new Item.Builder("I0023");
+        Item item = builder.price(1500.00).build();
         System.out.println(item);
     }
 }
