@@ -7,6 +7,7 @@
     > Prototype Design Pattern
     > Chain of Responsibility Design Pattern
         > ATM Dispenser
+    > Memento Design Pattern
 
 
 
