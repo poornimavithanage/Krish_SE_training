@@ -22,20 +22,21 @@ public class TaskController {
     private RestTemplate restTemplate;
 
     @RequestMapping(value = "/tasks",method = RequestMethod.POST)
-    public Task save(@RequestBody Task task) {
+    public ResponseEntity save(@RequestBody Task task) {
         Project project = restTemplate.getForObject("http://localhost:8081/project?id="+task.getProjectId(),Project.class);
         String projectStatus = project.getStatus();
         task.setProjectName(project.getProjectName());
 
         try {
             if(projectStatus.equals("active")){
-                return taskService.save(task);
+                return ResponseEntity.ok().body(task);
+            }else{
+                return ResponseEntity.status(HttpStatus.EXPECTATION_FAILED).body("Can not assign tasks due to deactivate project.");
             }
-            return task;
-        } catch (NullPointerException e) {
-            throw new NullPointerException("Project is deactivated");
-        }
 
+        } catch (NullPointerException e) {
+            return ResponseEntity.status(HttpStatus.EXPECTATION_FAILED).body("Project id does not exists");
+        }
     }
 
     @RequestMapping(value = "/tasks",method =RequestMethod.GET)
@@ -69,11 +70,18 @@ public class TaskController {
     }
 
     @RequestMapping(value = "/tasks",method = RequestMethod.PUT)
-    public Task update(@RequestBody Task task){
+    public ResponseEntity update(@RequestBody Task task){
+        Project project = restTemplate.getForObject("http://localhost:8081/project?id="+task.getProjectId(),Project.class);
+        String projectStatus = project.getStatus();
         try {
-            return taskService.update(task);
+            if(projectStatus.equals("active")){
+                return ResponseEntity.ok().body(task);
+            }else{
+                return ResponseEntity.status(HttpStatus.EXPECTATION_FAILED).body("Can not update tasks due to deactivate project.");
+            }
+
         } catch (NullPointerException e) {
-            throw new NullPointerException("Invalid task id");
+            return ResponseEntity.status(HttpStatus.EXPECTATION_FAILED).body("Project id does not exists");
         }
     }
 
