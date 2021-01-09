@@ -1,6 +1,5 @@
 package com.poornima.project.projectservice.controller;
 
-import com.google.gson.Gson;
 import com.poornima.commonmodel.project.Project;
 
 import com.poornima.project.projectservice.service.ProjectService;
@@ -10,8 +9,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.IOException;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 @Slf4j
 @RestController
@@ -45,26 +44,21 @@ public class ProjectController {
     }
 
     @RequestMapping(value = "/project",method = RequestMethod.PUT)
-    public Project update(@RequestBody Project project){
-        try {
-            return projectService.update(project);
-        } catch (NullPointerException e) {
-            throw new NullPointerException("Invalid project ID");
-        }
+    public ResponseEntity update(@RequestBody Project project){
+        projectService.update(project);
+        return ResponseEntity.ok().body(project);
     }
 
+
     @RequestMapping(value = "/project",method =RequestMethod.DELETE)
-    public ResponseEntity<Project>delete(@RequestParam int id) {
-        Project project = projectService.delete(id);
+    public ResponseEntity<String> delete(@RequestParam int id) {
         try {
-            if(project == null){
-                return  ResponseEntity.notFound().build();
-            }else{
-                return ResponseEntity.ok().body(project);
-            }
-        } catch (NullPointerException e) {
-            throw new NullPointerException("Invalid project ID");
+            projectService.delete(id);
+            return ResponseEntity.status(HttpStatus.OK).body("Project is deleted successfully");
+        } catch (NoSuchElementException noSuchElementException) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Project Id does not exist");
         }
+
     }
 
 }
