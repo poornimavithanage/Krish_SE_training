@@ -1,8 +1,8 @@
-package com.virtusa.exception.controller;
+package com.poornima.exception.controller;
 
 
-import com.virtusa.exception.db.DBConnection;
-import com.virtusa.exception.util.*;
+import com.poornima.exception.db.DBConnection;
+import com.poornima.exception.util.*;
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;

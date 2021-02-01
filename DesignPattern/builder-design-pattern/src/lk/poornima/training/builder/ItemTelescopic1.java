@@ -1,4 +1,4 @@
-package lk.virtusa.training.builder;
+package lk.poornima.training.builder;
 
 public class ItemTelescopic1 {
     String item_code;

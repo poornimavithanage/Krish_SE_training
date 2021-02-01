@@ -1,4 +1,4 @@
-package com.virtusa.exception.util;
+package com.poornima.exception.util;
 
 public class CustomerTM {
     private String id;

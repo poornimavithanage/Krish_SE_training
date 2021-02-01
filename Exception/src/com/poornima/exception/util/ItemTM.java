@@ -1,4 +1,4 @@
-package com.virtusa.exception.util;
+package com.poornima.exception.util;
 
 public class ItemTM {
     private String code;

@@ -1,7 +1,7 @@
-package com.virtusa.exception;
+package com.poornima.exception;
 
 
-import com.virtusa.exception.db.DBConnection;
+import com.poornima.exception.db.DBConnection;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

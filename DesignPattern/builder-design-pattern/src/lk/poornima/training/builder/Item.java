@@ -1,4 +1,4 @@
-package lk.virtusa.training.builder;
+package lk.poornima.training.builder;
 
 public class Item {
     private final String item_code;

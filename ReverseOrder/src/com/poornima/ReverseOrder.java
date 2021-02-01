@@ -1,4 +1,4 @@
-package com.virtusa;
+package com.poornima;
 
 import java.math.BigInteger;
 import java.util.Scanner;
