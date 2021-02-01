@@ -1,4 +1,4 @@
-package com.virtusa.capitalization;
+package com.poornima.capitalization;
 
 import java.io.*;
 
